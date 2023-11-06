@@ -11,9 +11,12 @@ type Site = {
 }
 
 export const site: Site = {
-    url: 'http://127.0.0.1:3000',
-    title: 'Next Project Template',
-    name: 'TNext',
+    url:
+        process.env.NODE_ENV === 'development'
+            ? 'http://127.0.0.1:3000'
+            : 'https://store-backend-bay.vercel.app/',
+    title: 'Store Dashboard',
+    name: '- Dashboard',
     keywords: ['template', 'next-template', 'full-stack next'],
     titleTemplate: '',
     description: '',
