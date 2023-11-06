@@ -1,0 +1,72 @@
+{
+    "name": "store-backend",
+    "version": "1.4.0",
+    "author": "Basheer Rajeh <muhammadbasheerrajeh@hotmail.com> (https://github.com/BasheerRajeh)",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BasheerRajeh/create-next-ts"
+    },
+    "scripts": {
+        "build": "next build",
+        "build-storybook": "storybook build",
+        "dev": "next dev --turbo",
+        "format": "prettier -w .",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "prepare": "husky install",
+        "start": "next start",
+        "storybook": "storybook dev -p 6006",
+        "type-check": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@radix-ui/react-scroll-area": "^1.0.5",
+        "@tailwindcss/typography": "^0.5.10",
+        "@types/node": "20.8.10",
+        "@types/react": "18.2.34",
+        "@types/react-dom": "18.2.14",
+        "autoprefixer": "10.4.16",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.0.0",
+        "lucide-react": "^0.292.0",
+        "next": "14.0.1",
+        "next-themes": "^0.2.1",
+        "postcss": "8.4.31",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-responsive": "^9.0.2",
+        "tailwind-merge": "^2.0.0",
+        "tailwindcss": "3.3.5",
+        "tailwindcss-animate": "^1.0.7",
+        "typescript": "5.2.2"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^18.2.0",
+        "@commitlint/config-conventional": "^18.1.0",
+        "@storybook/addon-essentials": "^7.5.2",
+        "@storybook/addon-interactions": "^7.5.2",
+        "@storybook/addon-links": "^7.5.2",
+        "@storybook/addon-onboarding": "^1.0.8",
+        "@storybook/blocks": "^7.5.2",
+        "@storybook/nextjs": "^7.5.2",
+        "@storybook/react": "^7.5.2",
+        "@storybook/testing-library": "^0.2.2",
+        "config-eslint": "^1.0.3",
+        "config-prettier": "^0.2.0",
+        "eslint": "^8.52.0",
+        "eslint-config-next": "^14.0.1",
+        "eslint-config-rajeh": "^0.3.0",
+        "eslint-plugin-storybook": "^0.6.15",
+        "husky": "^8.0.3",
+        "lint-staged": "^15.0.2",
+        "storybook": "^7.5.2"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint"
+        ],
+        "*.{json,css,scss,md,mdx,js,jsx,ts,tsx,cjs,mjs}": [
+            "prettier -c"
+        ]
+    },
+    "prettier": "config-prettier"
+}
