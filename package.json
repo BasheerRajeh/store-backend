@@ -11,6 +11,7 @@
         "build-storybook": "storybook build",
         "dev": "next dev --turbo",
         "format": "prettier -w .",
+        "postinstall": "prisma generate",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "prepare": "husky install",
