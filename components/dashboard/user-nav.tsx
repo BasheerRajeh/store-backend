@@ -1,7 +1,6 @@
 'use client'
 
 import { User } from '@prisma/client'
-import { User2 } from 'lucide-react'
 import { signIn, signOut } from 'next-auth/react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -15,6 +14,8 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+
+import Icons from '../icons'
 
 type UserNavProps = {
     user: Pick<User, 'id' | 'email' | 'image' | 'name'> | undefined
@@ -45,9 +46,9 @@ const UserNav: React.FC<UserNavProps> = ({ user }) => {
                             alt={`${user.name}'s picture`}
                         />
                         <AvatarFallback>
-                            <User2
-                                size={32}
-                                className='text-muted-foreground'
+                            <Icons.user
+                                className='fill-muted text-muted-foreground'
+                                strokeWidth={2}
                             />
                         </AvatarFallback>
                     </Avatar>
