@@ -9,7 +9,7 @@
     "scripts": {
         "build": "next build",
         "build-storybook": "storybook build",
-        "dev": "next dev --turbo",
+        "dev": "next dev",
         "format": "prettier -w .",
         "postinstall": "prisma generate",
         "lint": "eslint .",
@@ -33,6 +33,7 @@
         "@types/react": "18.2.36",
         "@types/react-dom": "18.2.14",
         "autoprefixer": "10.4.16",
+        "axios": "^1.6.1",
         "bcryptjs": "^2.4.3",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.0.0",
