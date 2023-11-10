@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowRightFromLine } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useCallback } from 'react'
 
@@ -27,10 +28,11 @@ const SwitchForm: React.FC<SwitchFormProps> = ({ className, ...rest }) => {
         <Button
             variant='ghost'
             onClick={toggleVariant}
-            className={cn(className)}
+            className={cn('flex gap-2', className)}
             {...rest}
         >
-            {variant}
+            {variant === 'LOGIN' ? 'Register' : 'Login'}
+            <ArrowRightFromLine className='h-5 w-5' />
         </Button>
     )
 }
