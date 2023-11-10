@@ -1,5 +1,6 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { useSearchParams } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import { useState } from 'react'
@@ -7,9 +8,14 @@ import { useState } from 'react'
 import Icons from '@/components/icons'
 import { Button } from '@/components/ui/button'
 
-import LoginForm from './_components/login-form'
-import RegisterForm from './_components/register-form'
 import { FormVariant } from './layout'
+
+const LoginForm = dynamic(() => import('./_components/login-form'), {
+    ssr: false,
+})
+const RegisterForm = dynamic(() => import('./_components/register-form'), {
+    ssr: false,
+})
 
 type ProviderLogin = 'GOOGLE' | 'GITHUB'
 
