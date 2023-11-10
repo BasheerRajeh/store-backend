@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import Icons from '@/components/icons'
 
 import SwitchForm from './_components/switch-form'
@@ -6,6 +8,11 @@ export type FormVariant = 'LOGIN' | 'REGISTER'
 
 type AuthLayoutProps = {
     children: React.ReactNode
+}
+
+export const metadata: Metadata = {
+    title: 'Sign in / Sign up',
+    description: 'Login to access to store dashboard',
 }
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
