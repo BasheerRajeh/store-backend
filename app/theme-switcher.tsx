@@ -1,10 +1,14 @@
 'use client'
 
 import { useTheme } from 'next-themes'
+import { toast } from 'sonner'
 
 const ThemeSwitcher = () => {
     const { resolvedTheme: theme, setTheme } = useTheme()
-    const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark')
+    const toggleTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark')
+        toast.success('Theme changed successfully')
+    }
     return (
         <button
             type='button'

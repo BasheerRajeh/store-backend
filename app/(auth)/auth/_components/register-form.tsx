@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import * as z from 'zod'
 
 import Icons from '@/components/icons'
@@ -59,10 +60,19 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ loading }) => {
     const onSubmit = async (values: z.infer<typeof registerSchema>) => {
         if (isValid) {
             setIsLoading(true)
-            const response = await axios.post('/api/auth/register', values)
-            if (response.status === 200) {
+            try {
+                const response = await axios.post('/api/auth/register', values)
+
+                if (response.status === 200) {
+                    setIsLoading(false)
+                    router.push('/')
+                } else {
+                    toast.error('Unexpected response from the server')
+                    setIsLoading(false)
+                }
+            } catch {
+                toast.error('An unexpected error occurred')
                 setIsLoading(false)
-                router.push('/')
             }
         }
     }

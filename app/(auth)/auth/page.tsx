@@ -16,7 +16,6 @@ type ProviderLogin = 'GOOGLE' | 'GITHUB'
 const AuthPage = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const searchParams = useSearchParams()
-    // const router = useRouter()
     const variant: FormVariant =
         searchParams.get('type')?.toUpperCase() === 'LOGIN'
             ? 'LOGIN'
