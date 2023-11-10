@@ -1,7 +1,8 @@
 'use client'
 
 import { User } from '@prisma/client'
-import { signIn, signOut } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { signOut } from 'next-auth/react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
@@ -22,13 +23,12 @@ type UserNavProps = {
 }
 
 const UserNav: React.FC<UserNavProps> = ({ user }) => {
+    const router = useRouter()
     if (!user)
         return (
             <Button
                 variant='ghost'
-                onClick={() =>
-                    signIn('google', { redirect: true, callbackUrl: '/' })
-                }
+                onClick={() => router.push('/auth')}
             >
                 Sign in
             </Button>
@@ -55,12 +55,12 @@ const UserNav: React.FC<UserNavProps> = ({ user }) => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
-                className='max-h-72 w-40'
+                className='max-h-72 w-44'
                 align='end'
                 forceMount
             >
                 <DropdownMenuLabel className='font-normal'>
-                    <div className='flex flex-col space-y-1.5'>
+                    <div className='flex flex-col space-y-1.5 truncate'>
                         <p className='text-sm font-medium leading-none'>
                             {user.name}
                         </p>

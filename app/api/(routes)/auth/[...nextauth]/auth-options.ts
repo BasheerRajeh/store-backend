@@ -53,6 +53,12 @@ const authOptions = {
         }),
     ],
     debug: process.env.NODE_ENV === 'development',
+    callbacks: {
+        session: ({ session, user }) => {
+            session.user.id = user.id
+            return session
+        },
+    },
 
     secret: process.env.NEXTAUTH_SECRET,
 } satisfies AuthOptions
